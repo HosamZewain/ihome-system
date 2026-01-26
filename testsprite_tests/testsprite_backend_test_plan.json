@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "user login with valid credentials",
+    "description": "Test the /api/auth/login endpoint to verify that a user can successfully log in with valid username and password, receiving a JWT token and user details including role and permissions."
+  },
+  {
+    "id": "TC002",
+    "title": "get current user information with valid token",
+    "description": "Test the /api/auth/me endpoint to ensure it returns the current authenticated user's information when provided with a valid JWT token, and returns 401 Unauthorized if the token is missing or invalid."
+  },
+  {
+    "id": "TC003",
+    "title": "create new product with required fields",
+    "description": "Test the POST /api/products endpoint to create a new product with required fields such as name, and verify the product is created successfully with a 201 response."
+  },
+  {
+    "id": "TC004",
+    "title": "update product stock quantity",
+    "description": "Test the PATCH /api/products/{id}/stock endpoint to update the stock quantity of a specific product and verify the stock is updated correctly with a 200 response."
+  },
+  {
+    "id": "TC005",
+    "title": "get all customers with purchase history",
+    "description": "Test the GET /api/customers endpoint to retrieve a list of all customers along with their purchase history, verifying the response contains customer details and associated invoices."
+  },
+  {
+    "id": "TC006",
+    "title": "create a sales invoice with line items",
+    "description": "Test the POST /api/invoices endpoint to create a new sales invoice including line items for sold products, and verify the invoice is created successfully with a 201 response."
+  },
+  {
+    "id": "TC007",
+    "title": "create purchase invoice and update stock",
+    "description": "Test the POST /api/purchases endpoint to create a purchase invoice and verify that the product stock quantities are automatically updated accordingly, with a 201 response."
+  },
+  {
+    "id": "TC008",
+    "title": "create an expense with category",
+    "description": "Test the POST /api/expenses endpoint to create a new expense record with a category, and verify the expense is created successfully with a 201 response."
+  },
+  {
+    "id": "TC009",
+    "title": "get all suppliers list",
+    "description": "Test the GET /api/suppliers endpoint to retrieve a list of all suppliers, verifying the response contains supplier details with a 200 status."
+  },
+  {
+    "id": "TC010",
+    "title": "get all roles with permissions",
+    "description": "Test the GET /api/roles endpoint to retrieve all roles along with their assigned permissions, verifying the response contains role details and permissions with a 200 status."
+  }
+]

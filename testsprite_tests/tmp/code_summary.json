@@ -1,0 +1,86 @@
+{
+    "tech_stack": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Vanilla CSS",
+        "Recharts",
+        "React Router"
+    ],
+    "features": [
+        {
+            "name": "Authentication",
+            "description": "User login and session management",
+            "files": [
+                "src/pages/Login.tsx",
+                "server/routes/auth.ts"
+            ]
+        },
+        {
+            "name": "Dashboard",
+            "description": "Analytics overview with charts and metrics",
+            "files": [
+                "src/pages/Dashboard.tsx",
+                "src/pages/Dashboard.css"
+            ]
+        },
+        {
+            "name": "Products",
+            "description": "Inventory management and product CRUD operations",
+            "files": [
+                "src/pages/Products.tsx",
+                "src/pages/Products.css"
+            ]
+        },
+        {
+            "name": "Customers",
+            "description": "Customer relationship management and details",
+            "files": [
+                "src/pages/Customers.tsx"
+            ]
+        },
+        {
+            "name": "Sales",
+            "description": "Creation and management of sales invoices and quotations",
+            "files": [
+                "src/pages/sales/Invoices.tsx",
+                "src/pages/sales/CreateInvoice.tsx",
+                "src/pages/sales/Quotations.tsx",
+                "src/pages/sales/CreateQuotation.tsx"
+            ]
+        },
+        {
+            "name": "Purchases",
+            "description": "Management of purchase invoices and suppliers",
+            "files": [
+                "src/pages/purchases/Purchases.tsx",
+                "src/pages/purchases/Suppliers.tsx"
+            ]
+        },
+        {
+            "name": "Expenses",
+            "description": "Tracking of business expenses and categories",
+            "files": [
+                "src/pages/Expenses.tsx",
+                "src/pages/Expenses.css"
+            ]
+        },
+        {
+            "name": "Admin",
+            "description": "Administrative management of users and roles",
+            "files": [
+                "src/pages/admin/Users.tsx",
+                "src/pages/admin/Roles.tsx"
+            ]
+        },
+        {
+            "name": "Reporting",
+            "description": "Detailed reports for sales, stock, and revenue",
+            "files": [
+                "src/pages/reports/SalesReport.tsx",
+                "src/pages/reports/StockReport.tsx",
+                "src/pages/reports/RevenueReport.tsx"
+            ]
+        }
+    ]
+}

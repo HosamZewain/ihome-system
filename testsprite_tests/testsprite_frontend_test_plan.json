@@ -1,0 +1,550 @@
+[
+  {
+    "id": "TC001",
+    "title": "User Login Success",
+    "description": "Verify that a user can log in successfully with valid credentials and maintain a session.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page."
+      },
+      {
+        "type": "action",
+        "description": "Enter valid username and password."
+      },
+      {
+        "type": "action",
+        "description": "Click the login button."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that login is successful and user is redirected to the dashboard."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that a session is established and maintained for subsequent requests."
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "User Login Failure with Invalid Credentials",
+    "description": "Validate that login fails with invalid username or password and an appropriate error message is shown.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page."
+      },
+      {
+        "type": "action",
+        "description": "Enter invalid username or password."
+      },
+      {
+        "type": "action",
+        "description": "Click the login button."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that login fails and an error message indicating invalid credentials is displayed."
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Dashboard Loads with Accurate and Updated Analytics",
+    "description": "Ensure the dashboard displays correct and real-time metrics and charts after login.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Login with valid credentials and navigate to the dashboard page."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that key business metrics are displayed."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that charts render correctly and reflect latest data."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that dashboard data updates in real-time or on refresh."
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Create New Product Successfully",
+    "description": "Verify that the user can add a new product with valid data and it appears in inventory immediately.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the products page after login."
+      },
+      {
+        "type": "action",
+        "description": "Click on 'Add New Product' button."
+      },
+      {
+        "type": "action",
+        "description": "Fill in valid product details including name, SKU, quantity, and price."
+      },
+      {
+        "type": "action",
+        "description": "Submit the new product form."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify product is listed in the product inventory."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify product details persist after page reload."
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Edit Existing Product Successfully",
+    "description": "Check that editing an existing product updates its details and changes are reflected instantly.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the products page."
+      },
+      {
+        "type": "action",
+        "description": "Select an existing product to edit."
+      },
+      {
+        "type": "action",
+        "description": "Modify product details such as name or quantity."
+      },
+      {
+        "type": "action",
+        "description": "Save changes."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify updated product details appear in the inventory list."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify changes persist after page reload."
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Delete Product and Confirm Removal",
+    "description": "Validate that deleting a product removes it from the inventory and it no longer appears in listings.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the products page."
+      },
+      {
+        "type": "action",
+        "description": "Select a product and click the delete option."
+      },
+      {
+        "type": "action",
+        "description": "Confirm deletion prompt."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product is removed from the inventory list immediately."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify product does not reappear after page reload."
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Create New Customer Record",
+    "description": "Ensure that a new customer can be added with valid details and is listed under customers.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Go to the customers section."
+      },
+      {
+        "type": "action",
+        "description": "Click on 'Add Customer' button."
+      },
+      {
+        "type": "action",
+        "description": "Enter valid customer information including name, contact details, and address."
+      },
+      {
+        "type": "action",
+        "description": "Submit the customer creation form."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new customer appears in the customer list."
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Edit Customer Details",
+    "description": "Verify that existing customer details can be modified and updates are saved properly.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the customers list."
+      },
+      {
+        "type": "action",
+        "description": "Select a customer and edit details such as phone number or email."
+      },
+      {
+        "type": "action",
+        "description": "Save the changes."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify customer information is updated in the list and customer view."
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Create Sales Invoice Successfully",
+    "description": "Validate the sales module supports creating a new invoice with accurate details and saves correctly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the sales invoices creation page."
+      },
+      {
+        "type": "action",
+        "description": "Enter valid invoice details including customer, products, quantities, and prices."
+      },
+      {
+        "type": "action",
+        "description": "Submit the invoice creation form."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new sales invoice is listed in the sales invoices page."
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Create Sales Quotation Successfully",
+    "description": "Ensure users can create and save sales quotations accurately and they appear in the quotations list.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the sales quotations creation page."
+      },
+      {
+        "type": "action",
+        "description": "Fill in quotation information including customer and product details."
+      },
+      {
+        "type": "action",
+        "description": "Submit the quotation form."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the quotation is listed in the quotations overview page."
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Manage Purchase Invoices and Supplier Details",
+    "description": "Verify creation, editing, and listing of purchase invoices and linked supplier information.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to purchases section and access suppliers list."
+      },
+      {
+        "type": "action",
+        "description": "Add new supplier with valid information and verify addition."
+      },
+      {
+        "type": "action",
+        "description": "Create a purchase invoice linked to a supplier with valid data."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify purchase invoice is saved and appears in purchase invoices listing."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify supplier details are correctly associated with purchase invoices."
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Track and Categorize Expenses",
+    "description": "Test that expenses can be recorded with correct categories and expense history is maintained.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to expenses module."
+      },
+      {
+        "type": "action",
+        "description": "Add a new expense with a valid category, amount, and description."
+      },
+      {
+        "type": "action",
+        "description": "Submit the expense entry."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new expense appears in the expense history list under the correct category."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify expense totals are updated accordingly."
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Admin User Role Management",
+    "description": "Ensure that admin users can create, edit, and assign roles to users with appropriate permission changes.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Login as admin and navigate to the admin users page."
+      },
+      {
+        "type": "action",
+        "description": "Create a new user and assign a role."
+      },
+      {
+        "type": "action",
+        "description": "Edit an existing user’s role."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify role changes affect user permissions correctly."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify updated user data persists after reload."
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Generate Sales Report Accuracy",
+    "description": "Validate that the sales report reflects accurate transactional data and filters work correctly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to sales reports page."
+      },
+      {
+        "type": "action",
+        "description": "Generate report for a specific date range."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify report includes all sales transactions within the date range."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all calculated totals and metrics (e.g., revenue) are accurate."
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Generate Stock Report Accuracy",
+    "description": "Ensure stock level reports update dynamically and correctly represent current inventory status.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to stock reports page."
+      },
+      {
+        "type": "action",
+        "description": "Request current stock level report."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify reported stock levels match actual product quantities."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify report updates immediately after inventory changes (additions, deletions, edits)."
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Generate Revenue Report Accuracy",
+    "description": "Verify revenue reports correctly aggregate income data and respond accurately to filter criteria changes.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to revenue reports page."
+      },
+      {
+        "type": "action",
+        "description": "Select various filters such as date ranges and categories."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify revenue totals update correctly based on applied filters."
+      },
+      {
+        "type": "assertion",
+        "description": "Cross-verify report figures against actual sales data."
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Validate Session Expiry and Re-login",
+    "description": "Check that user session expires after a set timeout and user is redirected to login page.",
+    "category": "security",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Login and remain inactive until session expiration."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify session expires after predefined timeout."
+      },
+      {
+        "type": "action",
+        "description": "Attempt an action requiring authentication after session expiry."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify user is redirected to login page and prompted to authenticate again."
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Access Control for Non-Admin Users",
+    "description": "Verify that users without admin roles cannot access admin pages or perform admin-only actions.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Login as a regular user (non-admin)."
+      },
+      {
+        "type": "action",
+        "description": "Attempt to navigate directly to admin pages via URLs."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify access is denied with an appropriate error or redirection."
+      },
+      {
+        "type": "action",
+        "description": "Attempt to perform admin-only actions via UI remnant or API."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm actions fail and proper permission error is returned."
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Form Validation for Product Creation",
+    "description": "Check that the product creation form validates mandatory fields and rejects invalid inputs.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to new product creation page."
+      },
+      {
+        "type": "action",
+        "description": "Attempt to submit the form with empty mandatory fields."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation errors are displayed for required fields."
+      },
+      {
+        "type": "action",
+        "description": "Enter invalid data such as negative quantity or invalid price format."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify input validation prevents form submission with invalid data."
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Error Handling on Network Failure During Save",
+    "description": "Validate that the system gracefully handles network errors during save operations and informs user appropriately.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "On any module (e.g., product or sales), initiate a save operation."
+      },
+      {
+        "type": "assertion",
+        "description": "Simulate network failure during save."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is notified of the failure with retry or error message."
+      },
+      {
+        "type": "action",
+        "description": "Recover network and retry save to confirm functionality restores correctly."
+      }
+    ]
+  }
+]

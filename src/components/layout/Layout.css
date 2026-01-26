@@ -1,0 +1,18 @@
+/* Layout styles are mostly in index.css */
+/* Additional layout-specific styles */
+
+.main-content {
+    animation: fadeIn var(--transition-base);
+}
+
+/* Page transitions */
+.page-enter {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
