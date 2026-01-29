@@ -21,7 +21,7 @@ const port = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static('public/uploads'));
+app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRouter);
@@ -38,6 +38,24 @@ app.use('/api/system', systemRouter);
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// Serve static files from the React app
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve uploads
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+
+// Serve React build
+app.use(express.static(path.join(__dirname, '../dist')));
+
+// Handle client-side routing
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 // Initialize database and start server
