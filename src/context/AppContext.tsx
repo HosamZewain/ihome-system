@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer, useEffect, useState, useCallback } from 'react';
 import type { AppState, AppAction, Product, Invoice, Expense, Customer } from '../types';
-import { productsApi, customersApi, invoicesApi, expensesApi } from '../services/api';
+import { productsApi, customersApi, invoicesApi, expensesApi, purchasesApi } from '../services/api';
 
 // Initial state
 const initialState: AppState = {
@@ -115,8 +115,8 @@ interface AppContextType {
     dispatch: React.Dispatch<AppAction>;
     loading: boolean;
     error: string | null;
-    addProduct: (product: Omit<Product, 'id' | 'createdAt' | 'updatedAt'>) => Promise<void>;
-    updateProduct: (product: Product) => Promise<void>;
+    addProduct: (product: Omit<Product, 'id' | 'createdAt' | 'updatedAt'> | FormData) => Promise<void>;
+    updateProduct: (product: Product | FormData) => Promise<void>;
     deleteProduct: (id: string) => Promise<void>;
     addInvoice: (invoice: Omit<Invoice, 'id' | 'createdAt' | 'invoiceNumber'>) => Promise<void>;
     updateInvoice: (invoice: Invoice) => Promise<void>;
@@ -126,6 +126,8 @@ interface AppContextType {
     deleteExpense: (id: string) => Promise<void>;
     addExpenseCategory: (category: { name: string; color: string }) => Promise<void>;
     addCustomer: (customer: Omit<Customer, 'id'>) => Promise<void>;
+    updateCustomer: (customer: Customer) => Promise<void>;
+    deleteCustomer: (id: string) => Promise<void>;
     importData: (type: 'products' | 'customers' | 'purchases', file: File) => Promise<void>;
     refreshData: () => Promise<void>;
 }
@@ -317,6 +319,26 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         }
     };
 
+    const updateCustomer = async (customer: Customer) => {
+        try {
+            await customersApi.update(customer.id, customer);
+            dispatch({ type: 'UPDATE_CUSTOMER', payload: customer });
+        } catch (err) {
+            console.error('Failed to update customer:', err);
+            throw err;
+        }
+    };
+
+    const deleteCustomer = async (id: string) => {
+        try {
+            await customersApi.delete(id);
+            dispatch({ type: 'DELETE_CUSTOMER', payload: id });
+        } catch (err) {
+            console.error('Failed to delete customer:', err);
+            throw err;
+        }
+    };
+
     const importData = async (type: 'products' | 'customers' | 'purchases', file: File) => {
         try {
             const formData = new FormData();
@@ -412,6 +434,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
                 deleteExpense,
                 addExpenseCategory,
                 addCustomer,
+                updateCustomer,
+                deleteCustomer,
                 importData,
                 refreshData,
             }}

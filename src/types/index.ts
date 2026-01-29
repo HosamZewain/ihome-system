@@ -11,6 +11,7 @@ export interface Product {
   description?: string;
   createdAt: string;
   updatedAt: string;
+  imageUrl?: string;
 }
 
 // Customer
@@ -108,6 +109,7 @@ export type AppAction =
   // Customers
   | { type: 'ADD_CUSTOMER'; payload: Customer }
   | { type: 'UPDATE_CUSTOMER'; payload: Customer }
+  | { type: 'DELETE_CUSTOMER'; payload: string }
   // Data
   | { type: 'LOAD_DATA'; payload: AppState };
 
