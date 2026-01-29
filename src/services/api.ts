@@ -1,4 +1,4 @@
-const API_BASE = 'https://system.ihome-store.com:3001/api';
+const API_BASE = 'https://system.ihome-store.com/api';
 
 // Generic fetch helper
 async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T> {
