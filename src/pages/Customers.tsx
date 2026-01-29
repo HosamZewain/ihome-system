@@ -337,6 +337,7 @@ export default function Customers() {
                         </form>
                     </div>
                 </div>
+            )}
             {/* Import Modal */}
             {isImportModalOpen && (
                 <div className="modal-backdrop" onClick={() => setIsImportModalOpen(false)}>
